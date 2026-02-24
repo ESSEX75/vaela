@@ -1,0 +1,16 @@
+{
+  "search": "Поиск",
+  "home": "Главная",
+  "collections": "Коллекции",
+  "wishlist": "Избранное",
+  "profile": "Профиль",
+  "filter": "Фильтр",
+  "filters": "Фильтры",
+  "closeMenu": "Закрыть меню",
+  "currencySymbol": "₽",
+  "close": "Закрыть",
+  "notification": "Уведомление",
+  "continueShopping": "Продолжить покупки",
+  "viewAll": "Смотреть все",
+  "noResults": "По запросу \"{query}\" ничего не найдено"
+}

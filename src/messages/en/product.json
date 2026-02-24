@@ -1,0 +1,24 @@
+{
+  "price": "Price",
+  "color": "Color",
+  "size": "Size",
+  "rating": "Rating",
+  "addToCart": "Add to Cart",
+  "addedToCart": "Added",
+  "selectSize": "Select Size",
+  "selectColor": "Select color {color}",
+  "productsCount": "Products ({count})",
+  "noImage": "No Image",
+  "colors": {
+    "BLACK": "Black",
+    "WHITE": "White",
+    "GRAY": "Gray",
+    "RED": "Red",
+    "ORANGE": "Orange",
+    "YELLOW": "Yellow",
+    "GREEN": "Green",
+    "PINK": "Pink",
+    "BLUE": "Blue",
+    "PURPLE": "Purple"
+  }
+}

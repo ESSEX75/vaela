@@ -1,0 +1,16 @@
+{
+  "search": "Search",
+  "home": "Home",
+  "collections": "Collections",
+  "wishlist": "Wishlist",
+  "profile": "Profile",
+  "filter": "Filter",
+  "filters": "Filters",
+  "closeMenu": "Close menu",
+  "currencySymbol": "$",
+  "close": "Close",
+  "notification": "Notification",
+  "continueShopping": "Continue Shopping",
+  "viewAll": "View All",
+  "noResults": "No products found for \"{query}\""
+}

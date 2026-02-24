@@ -1,0 +1,24 @@
+{
+  "price": "Цена",
+  "color": "Цвет",
+  "size": "Размер",
+  "rating": "Рейтинг",
+  "addToCart": "В корзину",
+  "addedToCart": "Добавлено",
+  "selectSize": "Выберите размер",
+  "selectColor": "Выберите цвет: {color}",
+  "productsCount": "Товары ({count})",
+  "noImage": "Нет изображения",
+  "colors": {
+    "BLACK": "Черный",
+    "WHITE": "Белый",
+    "GRAY": "Серый",
+    "RED": "Красный",
+    "ORANGE": "Оранжевый",
+    "YELLOW": "Желтый",
+    "GREEN": "Зеленый",
+    "PINK": "Розовый",
+    "BLUE": "Синий",
+    "PURPLE": "Фиолетовый"
+  }
+}

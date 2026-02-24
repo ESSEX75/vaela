@@ -1,0 +1,18 @@
+{
+  "topbar": {
+    "discount": "Member Prices | Up to 30% Off",
+    "careers": "Careers",
+    "help": "Help",
+    "buyer": "Buyer Protection",
+    "download": "Download App",
+    "phone": "+0125 258 192 502"
+  },
+  "locales": {
+    "en": "English",
+    "ru": "Russian"
+  },
+  "menu": "Menu",
+  "account": "Account",
+  "search": "Search",
+  "trendingNow": "Trending Now"
+}
