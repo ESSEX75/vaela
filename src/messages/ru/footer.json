@@ -1,0 +1,32 @@
+{
+  "hm": "Стиль без компромиссов — одежда и аксессуары для тех, кто ценит качество в каждой детали.",
+  "shop": "Магазин",
+  "help": "Помощь",
+  "helpLinks": {
+    "signup": "Регистрация",
+    "service": "Сервис 24ч",
+    "quickChat": "Быстрый чат"
+  },
+  "company": "Компания",
+  "companyLinks": {
+    "about": "О нас",
+    "termOfUse": "Условия использования",
+    "privacyPolicy": "Политика конфиденциальности",
+    "howItWorks": "Как это работает",
+    "contactUs": "Следите за нами"
+  },
+  "support": "Поддержка",
+  "supportLinks": {
+    "supportCareer": "Карьера",
+    "service": "Сервис 24ч",
+    "quickChat": "Быстрый чат"
+  },
+  "contact": "Контакты",
+  "contactLinks": {
+    "whatsapp": "Whatsapp",
+    "support": "Поддержка 24"
+  },
+  "copyright": "Авторское право © 2026 VAELA SHOP",
+  "createdBy": "Создано",
+  "reserved": "Все права защищены"
+}
