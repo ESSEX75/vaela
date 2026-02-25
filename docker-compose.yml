@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vaela_web
+    restart: always
+    expose:
+      - '3000'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.vaela.rule=Host(`vaela.kislitsyn-portfolio.pro`)'
+      - 'traefik.http.services.vaela.loadbalancer.server.port=3000'
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - VK_CLIENT_ID=${VK_CLIENT_ID}
+      - VK_CLIENT_SECRET=${VK_CLIENT_SECRET}
+      - YANDEX_CLIENT_ID=${YANDEX_CLIENT_ID}
+      - YANDEX_CLIENT_SECRET=${YANDEX_CLIENT_SECRET}
+    depends_on:
+      - db
+    networks:
+      - web_network
+
+  db:
+    image: postgres:15-alpine
+    container_name: vaela_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-vaela}
+    volumes:
+      - vaela_pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    networks:
+      - web_network
+
+networks:
+  web_network:
+    external: true
+
+volumes:
+  vaela_pgdata:
