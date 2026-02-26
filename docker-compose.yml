@@ -7,6 +7,7 @@ services:
         DATABASE_URL: ${DATABASE_URL}
     container_name: vaela_web
     restart: always
+    command: node server.js
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.vaela.rule=Host(`vaela.kislitsyn-portfolio.pro`)'
