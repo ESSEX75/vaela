@@ -23,7 +23,7 @@ RUN pnpm prisma generate
 
 # Build Next.js
 ENV NEXT_TELEMETRY_DISABLED 1
-RUN SKIP_ENV_VALIDATION=1 pnpm run build
+RUN SKIP_ENV_VALIDATION=1 pnpm exec next build
 
 # 3. Production image
 FROM node:20-alpine AS runner
