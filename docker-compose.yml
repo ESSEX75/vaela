@@ -7,11 +7,12 @@ services:
       dockerfile: Dockerfile
     container_name: vaela_web
     restart: always
-    expose:
-      - '3000'
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.vaela.rule=Host(`vaela.kislitsyn-portfolio.pro`)'
+      # Добавляем для HTTPS:
+      - 'traefik.http.routers.vaela.entrypoints=websecure'
+      - 'traefik.http.routers.vaela.tls.certresolver=myresolver'
       - 'traefik.http.services.vaela.loadbalancer.server.port=3000'
     environment:
       - DATABASE_URL=${DATABASE_URL}
