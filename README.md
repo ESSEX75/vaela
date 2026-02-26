@@ -39,7 +39,7 @@ DATABASE_URL="postgresql://user:password@localhost:5432/database_name?schema=pub
 NEXTAUTH_SECRET="your_nextauth_secret_here"
 NEXTAUTH_URL="http://localhost:3000"
 
-# VK OAuth (https://vk.com/apps?act=manage)
+# VK OAuth (https://dev.vk.com/ru/mini-apps/management/creating-new-apps?ref=old_admin_panel)
 VK_CLIENT_ID="your_vk_client_id"
 VK_CLIENT_SECRET="your_vk_client_secret"
 
