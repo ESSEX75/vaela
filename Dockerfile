@@ -18,6 +18,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Generate Prisma Client
+ARG DATABASE_URL
 RUN pnpm prisma generate
 
 # Build Next.js
