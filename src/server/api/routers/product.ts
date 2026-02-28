@@ -85,8 +85,8 @@ export const productRouter = createTRPCRouter({
         colors: colors.length > 0 ? { hasSome: colors } : undefined,
         OR: query
           ? [
-              { name: { contains: query, mode: 'insensitive' } },
-              { description: { contains: query, mode: 'insensitive' } },
+              { name: { string_contains: query } },
+              { description: { string_contains: query } },
             ]
           : undefined,
       };
