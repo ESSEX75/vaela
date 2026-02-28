@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { FiSearch, FiUser, FiHeart, FiMenu } from 'react-icons/fi';
 import { FavoritesCount } from './features/FavoritesCount';

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { TProduct } from '@/types';
 import { AddToFavorites } from '@/components/product/features/AddToFavorites';
-import { AddToCart } from '@/components/product/features/AddToCart';
 
 interface IProps {
   product: TProduct;

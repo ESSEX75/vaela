@@ -28,6 +28,7 @@ export function SearchDrawer({ isOpen, onClose }: IProps) {
 
   useEffect(() => {
     if (!isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setQuery('');
       setDebouncedQuery('');
     }

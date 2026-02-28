@@ -47,7 +47,7 @@ export type TShowcaseProduct = TShowcase['showcaseProducts'][number];
  */
 export type TLocaleParams = Promise<{ locale: string }>;
 
-export interface IBasePageProps<TParams = {}> {
+export interface IBasePageProps<TParams = Record<string, unknown>> {
   params: Promise<TParams & { locale: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }

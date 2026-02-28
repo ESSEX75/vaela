@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Fragment, useMemo, useState, useCallback } from 'react';
+import { Fragment, useState, useCallback } from 'react';
 import { Transition } from '@headlessui/react';
 import { useLocale } from 'next-intl';
 import { TopBar } from './TopBar';

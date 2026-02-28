@@ -1,4 +1,4 @@
-import { initTRPC, TRPCError } from '@trpc/server';
+import { initTRPC } from '@trpc/server';
 import { type Session } from 'next-auth';
 import superjson from 'superjson';
 import { getServerAuthSession } from '../auth';
