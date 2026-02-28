@@ -18,7 +18,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Generate Prisma Client
-ARG DATABASE_URL
+ENV DATABASE_URL="postgresql://dummy"
 RUN pnpm prisma generate
 
 # Build Next.js
@@ -36,6 +36,7 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
+COPY --from=builder /app/prisma ./prisma
 
 # Set permissions for prerender cache
 RUN mkdir .next
