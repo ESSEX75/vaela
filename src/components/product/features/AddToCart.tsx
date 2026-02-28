@@ -6,9 +6,9 @@ import type { TProduct } from '@/types';
 import { useTranslations } from 'next-intl';
 import { useCallback, useState } from 'react';
 import { FiShoppingBag, FiCheck } from 'react-icons/fi';
-import { clsx } from 'clsx';
 import { ProductSize, ProductColor } from '@prisma/client';
 import { Button } from '@/components/ui';
+import { cn } from '@/utils';
 
 interface IProps {
   product: TProduct;
@@ -60,7 +60,7 @@ export function AddToCart({
       <Button
         onClick={handleAddToCart}
         variant="icon-round"
-        className={clsx(className, { 'bg-black text-white': isAdded })}
+        className={cn(className, { 'bg-black text-white': isAdded })}
         aria-label={t('addToCart')}
       >
         {isAdded ? (
@@ -77,7 +77,7 @@ export function AddToCart({
       onClick={handleAddToCart}
       variant="primary"
       fullWidth
-      className={clsx(className, {
+      className={cn(className, {
         'bg-green-600 hover:bg-green-700': isAdded,
       })}
     >

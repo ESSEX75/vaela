@@ -1,7 +1,7 @@
 'use client';
 
 import { FiMinus, FiPlus } from 'react-icons/fi';
-import { clsx } from 'clsx';
+import { cn } from '@/utils';
 
 interface IProps {
   quantity: number;
@@ -26,11 +26,11 @@ export function QuantitySelector({
   const isMax = max ? quantity >= max : false;
 
   return (
-    <div className={clsx('flex items-center gap-2', className)}>
+    <div className={cn('flex items-center gap-2', className)}>
       <button
         onClick={onDecrease}
         disabled={disabled || isMin}
-        className={clsx(
+        className={cn(
           'flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 p-1 transition-colors',
           disabled || isMin
             ? 'cursor-not-allowed opacity-50'
@@ -48,7 +48,7 @@ export function QuantitySelector({
       <button
         onClick={onIncrease}
         disabled={disabled || isMax}
-        className={clsx(
+        className={cn(
           'flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 p-1 transition-colors',
           disabled || isMax
             ? 'cursor-not-allowed opacity-50'
