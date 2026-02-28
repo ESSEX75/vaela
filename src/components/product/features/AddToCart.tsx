@@ -52,7 +52,7 @@ export function AddToCart({
       setIsAdded(true);
       setTimeout(() => setIsAdded(false), 2000);
     },
-    [addItem, product, selectedSize, selectedColor, t],
+    [addItem, product, selectedSize, selectedColor, t, addModal],
   );
 
   if (iconOnly) {

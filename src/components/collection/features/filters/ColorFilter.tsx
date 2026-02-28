@@ -50,6 +50,7 @@ export function ColorFilter() {
                 )}
               />
               <span className="text-sm text-gray-700 capitalize">
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {t(`colors.${label}` as any)}
               </span>
             </label>

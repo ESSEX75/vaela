@@ -75,8 +75,10 @@ export function ProductVariants({
                     : '',
                 )}
                 aria-label={t('selectColor', {
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   color: t(`colors.${color}` as any),
                 })}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 title={t(`colors.${color}` as any)}
               >
                 <span

@@ -1,6 +1,5 @@
 import type { TShowcaseCollection } from '@/types';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import { Title } from '@/components/ui';
 import { ShowcaseMedia } from '@/components/showcase/ui/ShowcaseMedia';
 import { ArrowIcon } from '@/components/showcase/ui/ArrowIcon';

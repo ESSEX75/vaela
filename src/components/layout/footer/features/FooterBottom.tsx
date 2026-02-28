@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { BsGithub } from 'react-icons/bs';
 
-const YEAR = new Date().getFullYear();
-
 export function FooterBottom() {
   const t = useTranslations('footer');
 
