@@ -13,12 +13,7 @@ export const env = createEnv({
       process.env.NODE_ENV === 'production'
         ? z.string().min(1)
         : z.string().min(1).optional(),
-    NEXTAUTH_URL: z.preprocess(
-      // Позволяет автоматически использовать VERCEL_URL при деплое на Vercel
-      str => process.env.VERCEL_URL ?? str,
-      // VERCEL_URL не включает протокол, поэтому валидируем как строку
-      process.env.VERCEL ? z.string().min(1) : z.string().url(),
-    ),
+    NEXTAUTH_URL: z.string().url(),
     VK_CLIENT_ID: z.string().min(1),
     VK_CLIENT_SECRET: z.string().min(1),
     YANDEX_CLIENT_ID: z.string().min(1),
