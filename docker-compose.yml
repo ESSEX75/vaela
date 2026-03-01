@@ -26,6 +26,21 @@ services:
     networks:
       - web_network
 
+  migration:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: vaela-web-builder:latest
+    container_name: vaela_migration
+    command: pnpm run migrate
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    depends_on:
+      - db
+    networks:
+      - web_network
+
   db:
     image: postgres:15-alpine
     container_name: vaela_db
