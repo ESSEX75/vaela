@@ -3,42 +3,28 @@
 import { useFavoritesStore } from '@/store/useFavoritesStore';
 import { trpc } from '@/lib/trpc/client';
 import { ProductCard, ProductCardSkeleton } from '@/components/product';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Title, Button } from '@/components/ui';
 
 export default function WishlistPage() {
-  const { items } = useFavoritesStore();
+  const { items, setItems } = useFavoritesStore();
   const t = useTranslations('wishlist');
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsClient(true);
-  }, []);
 
   const { data: products, isLoading } = trpc.product.getByIds.useQuery(
     { ids: items },
     {
-      enabled: isClient && items.length > 0,
+      enabled: items.length > 0,
     },
   );
 
-  if (!isClient) {
-    return (
-      <div className="my-12 flex min-h-screen flex-col gap-8">
-        <Title as="h1" size="hero" className="px-6">
-          {t('wishlist')}
-        </Title>
-
-        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-          {[...Array(4)].map((_, i) => (
-            <ProductCardSkeleton key={i} />
-          ))}
-        </div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (!isLoading && products) {
+      if (products.length !== items.length) {
+        setItems(products.map(p => p.id.toString()));
+      }
+    }
+  }, [isLoading, products, items.length, setItems]);
 
   if (items.length === 0) {
     return (
