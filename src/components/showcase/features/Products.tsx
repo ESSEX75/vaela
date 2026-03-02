@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Title } from '@/components/ui';
+import { Price } from '@/components/ui/Price';
 import { ShowcaseMedia } from '@/components/showcase/ui/ShowcaseMedia';
 import type { TProduct } from '@/types';
 import { getT } from '@/utils/i18n';
@@ -38,9 +39,9 @@ export function Products({ products, locale, title, rootCategory }: IProps) {
               />
               <div className="flex flex-col gap-1 px-6">
                 <Title>{translatedName}</Title>
-                <p className="text-sm text-gray-500 uppercase">
-                  ${price.toFixed(2)}
-                </p>
+                <div className="text-sm text-gray-500 uppercase">
+                  <Price amount={price} />
+                </div>
               </div>
             </Link>
           );
