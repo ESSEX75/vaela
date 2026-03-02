@@ -4,6 +4,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 interface IFavoritesState {
   items: string[];
   toggleItem: (id: string) => void;
+  setItems: (items: string[]) => void;
 }
 
 export const useFavoritesStore = create<IFavoritesState>()(
@@ -18,6 +19,7 @@ export const useFavoritesStore = create<IFavoritesState>()(
           set({ items: [...items, id] });
         }
       },
+      setItems: items => set({ items }),
     }),
     {
       name: 'favorites-storage',
