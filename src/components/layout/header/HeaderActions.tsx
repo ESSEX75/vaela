@@ -1,7 +1,9 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { FiSearch, FiUser, FiHeart, FiMenu } from 'react-icons/fi';
+import { FiSearch, FiUser, FiHeart, FiMenu, FiUserCheck } from 'react-icons/fi';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import { FavoritesCount } from './features/FavoritesCount';
 import { CartTrigger } from '@/components/cart/CartTrigger';
 import { Button } from '@/components/ui';
@@ -13,6 +15,7 @@ interface IProps {
 
 export function HeaderActions({ onSearchClick, setIsMobileMenuOpen }: IProps) {
   const locale = useLocale();
+  const { data: session, status } = useSession();
 
   return (
     <div className="flex items-center gap-6 text-black">
@@ -30,10 +33,24 @@ export function HeaderActions({ onSearchClick, setIsMobileMenuOpen }: IProps) {
       <Button
         variant="icon-ghost"
         href={`/${locale}/signin`}
-        className="transition-transform hover:scale-105"
+        className="overflow-hidden rounded-full transition-transform hover:scale-105"
         aria-label="Sign in"
       >
-        <FiUser className="h-5 w-5 transform transition-transform duration-300 hover:scale-110" />
+        {status === 'authenticated' ? (
+          session.user?.image ? (
+            <Image
+              src={session.user.image}
+              alt={session.user.name || 'User avatar'}
+              width={24}
+              height={24}
+              className="h-6 w-6 rounded-full object-cover"
+            />
+          ) : (
+            <FiUserCheck className="h-5 w-5 transform transition-transform duration-300 hover:scale-110" />
+          )
+        ) : (
+          <FiUser className="h-5 w-5 transform transition-transform duration-300 hover:scale-110" />
+        )}
       </Button>
 
       {/* Избранное */}
