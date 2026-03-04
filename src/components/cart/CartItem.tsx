@@ -20,7 +20,8 @@ interface IProps {
 
 export function CartItem({ item, locale }: IProps) {
   const t = useTranslations('product');
-  const { updateQuantity, removeItem } = useCartStore();
+  const updateQuantity = useCartStore(state => state.updateQuantity);
+  const removeItem = useCartStore(state => state.removeItem);
   const { product, quantity, size, color, itemKey } = item;
   const name = getT(product.name, locale);
 

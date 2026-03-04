@@ -26,7 +26,7 @@ export function AddToCart({
   selectedColor,
 }: IProps) {
   const [isAdded, setIsAdded] = useState(false);
-  const { addItem } = useCartStore();
+  const addItem = useCartStore(state => state.addItem);
   const { addModal } = useModalStore();
   const t = useTranslations('product');
 

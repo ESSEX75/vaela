@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui';
 
 export function CartTrigger() {
-  const { openCart, items } = useCartStore();
+  const openCart = useCartStore(state => state.openCart);
+  const items = useCartStore(state => state.items);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

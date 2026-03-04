@@ -10,7 +10,10 @@ import { Drawer } from '@/components/ui/Drawer';
 import { Button } from '@/components/ui';
 
 export function CartDrawer() {
-  const { isOpen, closeCart, items, clearCart } = useCartStore();
+  const isOpen = useCartStore(state => state.isOpen);
+  const closeCart = useCartStore(state => state.closeCart);
+  const items = useCartStore(state => state.items);
+  const clearCart = useCartStore(state => state.clearCart);
   const { addModal } = useModalStore();
   const t = useTranslations('cart');
   const tCheckout = useTranslations('checkout');
