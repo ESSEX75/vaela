@@ -2,6 +2,8 @@
 
 Full-stack e-commerce платформа на базе **T3 Stack**.
 
+🌐 **Сайт:** [vaela.kislitsyn-portfolio.pro](https://vaela.kislitsyn-portfolio.pro)
+
 ![homepage](public/screenshots/homepage.jpg)
 ![products](public/screenshots/products.jpg)
 ![tests](public/screenshots/test.png)
