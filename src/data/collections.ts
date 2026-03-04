@@ -36,22 +36,6 @@ export const collections: Prisma.CollectionCreateManyInput[] = [
   },
   {
     id: 3,
-    name: { en: 'Kids', ru: 'Дети' },
-    slug: 'kids',
-    isRoot: true,
-    parentId: null,
-    metaTitle: {
-      en: 'Kids Collection - Shop All Kids Products',
-      ru: 'Детская коллекция — купить детские товары',
-    },
-    metaDescription: {
-      en: 'Browse our complete selection of kids clothing, shoes, and accessories.',
-      ru: 'Посмотрите наш полный выбор детской одежды, обуви и аксессуаров.',
-    },
-    order: 3,
-  },
-  {
-    id: 4,
     name: { en: 'Home', ru: 'Дом' },
     slug: 'home',
     isRoot: true,
@@ -64,10 +48,10 @@ export const collections: Prisma.CollectionCreateManyInput[] = [
       en: 'Find everything for your home including decor, accessories, and more.',
       ru: 'Найдите все для вашего дома, включая декор, аксессуары и многое другое.',
     },
-    order: 4,
+    order: 3,
   },
   {
-    id: 5,
+    id: 4,
     name: { en: 'Beauty', ru: 'Красота' },
     slug: 'beauty',
     isRoot: true,
@@ -80,7 +64,7 @@ export const collections: Prisma.CollectionCreateManyInput[] = [
       en: 'Explore our beauty collection with cosmetics, skincare, and wellness products.',
       ru: 'Изучите нашу коллекцию красоты с косметикой, средствами для кожи и велнеса.',
     },
-    order: 5,
+    order: 4,
   },
 
   // Категории второго уровня (Level 1 Categories)
@@ -165,6 +149,153 @@ export const collections: Prisma.CollectionCreateManyInput[] = [
     metaDescription: {
       en: "Shop all women's shirts & blouses.",
       ru: 'Купить женские рубашки и блузки.',
+    },
+  },
+  {
+    id: 18,
+    name: { en: "Men's Jackets & Coats", ru: 'Мужские куртки и пальто' },
+    slug: 'men-jackets-coats',
+    parentId: 2,
+    metaTitle: {
+      en: "Men's Jackets & Coats",
+      ru: 'Мужские куртки и пальто',
+    },
+    metaDescription: {
+      en: "Shop all men's jackets & coats.",
+      ru: 'Купить мужские куртки и пальто.',
+    },
+  },
+  {
+    id: 19,
+    name: { en: "Men's Jeans", ru: 'Мужские джинсы' },
+    slug: 'men-jeans',
+    parentId: 2,
+    metaTitle: {
+      en: "Men's Jeans",
+      ru: 'Мужские джинсы',
+    },
+    metaDescription: {
+      en: "Shop all men's jeans.",
+      ru: 'Купить мужские джинсы.',
+    },
+  },
+  {
+    id: 20,
+    name: {
+      en: 'Gym Hoodies & Sweatshirts For Men',
+      ru: 'Спортивные толстовки и свитшоты для мужчин',
+    },
+    slug: 'gym-hoodies-sweatshirts-for-men',
+    parentId: 2,
+    metaTitle: {
+      en: "Men's Hoodies & Sweatshirts",
+      ru: 'Спортивные толстовки и свитшоты для мужчин',
+    },
+    metaDescription: {
+      en: "Shop all men's hoodies & sweatshirts.",
+      ru: 'Купить спортивные толстовки и свитшоты для мужчин.',
+    },
+  },
+  {
+    id: 21,
+    name: {
+      en: "Men's Trousers",
+      ru: 'Мужские брюки',
+    },
+    slug: 'men-trousers',
+    parentId: 2,
+    metaTitle: {
+      en: "Men's Trousers",
+      ru: 'Мужские брюки',
+    },
+    metaDescription: {
+      en: "Shop all men's trousers.",
+      ru: 'Купить мужские брюки.',
+    },
+  },
+  {
+    id: 22,
+    name: {
+      en: 'Living Room Furniture',
+      ru: 'Мебель для гостиной',
+    },
+    slug: 'living-room-furniture',
+    parentId: 3,
+    metaTitle: {
+      en: 'Living Room Furniture',
+      ru: 'Мебель для гостиной',
+    },
+    metaDescription: {
+      en: 'Shop all living room furniture.',
+      ru: 'Купить мебель для гостиной.',
+    },
+  },
+  {
+    id: 23,
+    name: {
+      en: 'Bathroom Decor',
+      ru: 'Аксессуары для ванной',
+    },
+    slug: 'bathroom-decor',
+    parentId: 3,
+    metaTitle: {
+      en: 'Bathroom Decor',
+      ru: 'Аксессуары для ванной',
+    },
+    metaDescription: {
+      en: 'Shop all bathroom decor.',
+      ru: 'Купить аксессуары для ванной.',
+    },
+  },
+  {
+    id: 24,
+    name: {
+      en: 'Kitchenware',
+      ru: 'Кухонные принадлежности',
+    },
+    slug: 'kitchenware',
+    parentId: 3,
+    metaTitle: {
+      en: 'Kitchenware',
+      ru: 'Кухонные принадлежности',
+    },
+    metaDescription: {
+      en: 'Shop all kitchenware.',
+      ru: 'Купить кухонные принадлежности.',
+    },
+  },
+  {
+    id: 25,
+    name: {
+      en: 'Eye Makeup',
+      ru: 'Макияж глаз',
+    },
+    slug: 'eye-makeup',
+    parentId: 4,
+    metaTitle: {
+      en: 'Eye Makeup',
+      ru: 'Макияж глаз',
+    },
+    metaDescription: {
+      en: 'Shop all eye makeup.',
+      ru: 'Купить макияж глаз.',
+    },
+  },
+  {
+    id: 26,
+    name: {
+      en: 'Fragrance & Perfume',
+      ru: 'Аромат и парфюмерия',
+    },
+    slug: 'fragrance-perfume',
+    parentId: 4,
+    metaTitle: {
+      en: 'Fragrance & Perfume',
+      ru: 'Аромат и парфюмерия',
+    },
+    metaDescription: {
+      en: 'Shop all fragrance & perfume.',
+      ru: 'Купить аромат и парфюмерию.',
     },
   },
 ];
