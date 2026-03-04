@@ -42,7 +42,7 @@ export function ShowcaseMedia({
             muted
             loop
             playsInline
-            poster="/assets/poster.avif"
+            poster="/assets/poster.jpg"
             preload="auto"
             className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
           />
