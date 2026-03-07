@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { cn } from '@/utils';
@@ -12,7 +15,8 @@ interface IProps {
 }
 
 const isVideoUrl = (url: string) => {
-  const extension = url.split('.').pop()?.toLowerCase();
+  const urlWithoutQuery = url.split('?')[0];
+  const extension = urlWithoutQuery.split('.').pop()?.toLowerCase();
   return ['mp4', 'webm', 'ogg', 'mov'].includes(extension || '');
 };
 
@@ -26,6 +30,17 @@ export function ShowcaseMedia({
 }: IProps) {
   const t = useTranslations('product');
   const isVideo = isVideoProp || (src ? isVideoUrl(src) : false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (isVideo && videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(error => {
+        console.warn('Video autoplay failed:', error);
+      });
+    }
+  }, [src, isVideo]);
 
   return (
     <div
@@ -37,6 +52,7 @@ export function ShowcaseMedia({
       {src ? (
         isVideo ? (
           <video
+            ref={videoRef}
             src={src}
             autoPlay
             muted
